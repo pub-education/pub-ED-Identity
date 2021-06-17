@@ -86,8 +86,8 @@ namespace Identity.Data
                 Email = "admin@data4mat.com",
                 NormalizedEmail = "ADMIN@DATA4MAT.COM",
                 EmailConfirmed = true,
-                UserName = "admin",
-                NormalizedUserName = "ADMIN",
+                UserName = "admin@data4mat.com",
+                NormalizedUserName = "ADMIN@DATA4MAT.COM",
                 ConcurrencyStamp=adminRoleId,
                 SecurityStamp=adminRoleId,
                 CityId = 12
@@ -102,8 +102,8 @@ namespace Identity.Data
                 Email = "chris@data4mat.com",
                 NormalizedEmail = "CHRIS@DATA4MAT.COM",
                 EmailConfirmed = true,
-                UserName = "chris",
-                NormalizedUserName = "CHRIS",
+                UserName = "chris@data4mat.com",
+                NormalizedUserName = "CHRIS@DATA4MAT.COM",
                 ConcurrencyStamp = userRoleId,
                 SecurityStamp=userRoleId,
                 CityId = 1
