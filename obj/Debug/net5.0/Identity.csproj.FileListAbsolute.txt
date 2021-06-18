@@ -196,3 +196,6 @@ F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5
 F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Error.cshtml.g.cs
 F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Views\Users\ListPeople.cshtml.g.cs
+F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Views\Admin\CountryCityManager.cshtml.g.cs
+F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Views\Admin\PeopleManager.cshtml.g.cs

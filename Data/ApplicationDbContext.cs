@@ -8,16 +8,20 @@ using System.Text;
 
 namespace Identity.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-        }
 
+        }
+        [PersonalData]
         public DbSet<CityClass> Cities { get; set; }
 
+        [PersonalData]
         public DbSet<CountryClass> Countries { get; set; }
+
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

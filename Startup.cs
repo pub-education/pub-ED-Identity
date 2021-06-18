@@ -33,8 +33,18 @@ namespace Identity
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<ApplicationUser>(options =>
+            {
+                options.SignIn.RequireConfirmedAccount = true;
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 4;
+                options.Password.RequiredUniqueChars = 1;
+            })
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            /*
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;
@@ -44,7 +54,9 @@ namespace Identity
                 options.Password.RequiredLength = 4;
                 options.Password.RequiredUniqueChars = 1;
             });
+            */
             services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

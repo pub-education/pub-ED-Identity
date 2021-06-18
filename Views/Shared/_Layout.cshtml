@@ -22,7 +22,20 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="EditUser">Admin - Edit Users</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a id="student-navbar-link" class="nav-link dropdown-toggle text-dark" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" asp-area="" asp-controller="Admin" asp-action="Places">Admin - Places</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="AddCountry">Add Country</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="AddCity">Add City</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="ListCities">List All Cities</a>
+                                <!--<a class="dropdown-item" asp-area="" asp-controller="Student" asp-action="ListCourses">List Student Courses</a>
+            <a class="dropdown-item" asp-area="" asp-controller="Student" asp-action="Edit">Edit Student</a>
+            <a class="dropdown-item" asp-area="" asp-controller="Student" asp-action="Delete">Delete Student</a>
+                -->
+                            </div>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -37,8 +50,8 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - Identity - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="container text-center">
+            Copyright &copy; 2021 - <a href="https://chrisjohannesson.com">Chris Johannesson</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
