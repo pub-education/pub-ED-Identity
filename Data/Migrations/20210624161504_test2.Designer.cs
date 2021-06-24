@@ -4,14 +4,16 @@ using Identity.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Identity.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210624161504_test2")]
+    partial class test2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,14 +29,20 @@ namespace Identity.Data.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CityId")
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CityId")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CountryId")
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -64,6 +72,9 @@ namespace Identity.Data.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
@@ -85,10 +96,6 @@ namespace Identity.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CityId");
-
-                    b.HasIndex("CountryId");
-
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -102,9 +109,11 @@ namespace Identity.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "55baeffd-ada6-4f07-a0bf-912e7172153a",
+                            Id = "278ffd82-5c7e-4c3d-8ceb-2dd382cd9011",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e7281058-1a8b-4968-9b4a-216c13e8c63f",
+                            CityId = 12,
+                            ConcurrencyStamp = "1d0b387f-bd66-441b-88d1-97b2b5afa5bf",
+                            CountryId = 0,
                             Email = "admin@data4mat.com",
                             EmailConfirmed = true,
                             FirstName = "admin",
@@ -112,17 +121,19 @@ namespace Identity.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@DATA4MAT.COM",
                             NormalizedUserName = "ADMIN@DATA4MAT.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEslpWZj8ElOjY/Rhaxe5MgFADW42rDvaToXSjnicpYXQHN83p2bQIRVpRsarr9kgg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMl7gi0RUN4U03OARGHTjPeoxyaxWN2Jvz95nkxNMEu83S+vUTocqeT+CQ+JV+XI5A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e7281058-1a8b-4968-9b4a-216c13e8c63f",
+                            SecurityStamp = "1d0b387f-bd66-441b-88d1-97b2b5afa5bf",
                             TwoFactorEnabled = false,
                             UserName = "admin@data4mat.com"
                         },
                         new
                         {
-                            Id = "d8640500-3e4f-40e6-a28e-36cda5d9b2cf",
+                            Id = "57a2906d-ef97-4b0d-bd84-d8eb09f4701a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "75bd005a-632c-470e-b868-da61859590cb",
+                            CityId = 1,
+                            ConcurrencyStamp = "360e7fe5-2ef4-4ee4-8c66-fa22e2d50245",
+                            CountryId = 0,
                             Email = "chris@data4mat.com",
                             EmailConfirmed = true,
                             FirstName = "Chris",
@@ -130,9 +141,9 @@ namespace Identity.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CHRIS@DATA4MAT.COM",
                             NormalizedUserName = "CHRIS@DATA4MAT.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECov84hVhLK0RVqXyTPUYZQ4tPLMoCYdgjC6gISXpEoniOF5ovV66p52uBGQ9rzs3Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPORJ0Sktew0NDv9ovUNlxnpmEkB2L0pPBtQFr96ddkjTHdxY8QC6WhDmy1rDzXw2g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "75bd005a-632c-470e-b868-da61859590cb",
+                            SecurityStamp = "360e7fe5-2ef4-4ee4-8c66-fa22e2d50245",
                             TwoFactorEnabled = false,
                             UserName = "chris@data4mat.com"
                         });
@@ -148,7 +159,7 @@ namespace Identity.Data.Migrations
                     b.Property<int?>("CountryClassId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CountryId")
+                    b.Property<int>("CountryRefId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -164,97 +175,97 @@ namespace Identity.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CountryId = 1,
+                            CountryRefId = 1,
                             Name = "Gothenburg"
                         },
                         new
                         {
                             Id = 2,
-                            CountryId = 1,
+                            CountryRefId = 1,
                             Name = "Stockholm"
                         },
                         new
                         {
                             Id = 3,
-                            CountryId = 2,
+                            CountryRefId = 2,
                             Name = "Las Pinas"
                         },
                         new
                         {
                             Id = 4,
-                            CountryId = 2,
+                            CountryRefId = 2,
                             Name = "Manila"
                         },
                         new
                         {
                             Id = 5,
-                            CountryId = 3,
+                            CountryRefId = 3,
                             Name = "Riverside"
                         },
                         new
                         {
                             Id = 6,
-                            CountryId = 3,
+                            CountryRefId = 3,
                             Name = "Anaheim"
                         },
                         new
                         {
                             Id = 7,
-                            CountryId = 3,
+                            CountryRefId = 3,
                             Name = "Honolulu"
                         },
                         new
                         {
                             Id = 8,
-                            CountryId = 3,
+                            CountryRefId = 3,
                             Name = "Miami"
                         },
                         new
                         {
                             Id = 9,
-                            CountryId = 4,
+                            CountryRefId = 4,
                             Name = "Oslo"
                         },
                         new
                         {
                             Id = 10,
-                            CountryId = 4,
+                            CountryRefId = 4,
                             Name = "Geiranger"
                         },
                         new
                         {
                             Id = 11,
-                            CountryId = 4,
+                            CountryRefId = 4,
                             Name = "Liland"
                         },
                         new
                         {
                             Id = 12,
-                            CountryId = 5,
+                            CountryRefId = 5,
                             Name = "Brisbane"
                         },
                         new
                         {
                             Id = 13,
-                            CountryId = 5,
+                            CountryRefId = 5,
                             Name = "Cairns"
                         },
                         new
                         {
                             Id = 14,
-                            CountryId = 5,
+                            CountryRefId = 5,
                             Name = "Perth"
                         },
                         new
                         {
                             Id = 15,
-                            CountryId = 5,
+                            CountryRefId = 5,
                             Name = "Sydney"
                         },
                         new
                         {
                             Id = 16,
-                            CountryId = 5,
+                            CountryRefId = 5,
                             Name = "Canberra"
                         });
                 });
@@ -330,15 +341,15 @@ namespace Identity.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e7281058-1a8b-4968-9b4a-216c13e8c63f",
-                            ConcurrencyStamp = "e7281058-1a8b-4968-9b4a-216c13e8c63f",
+                            Id = "1d0b387f-bd66-441b-88d1-97b2b5afa5bf",
+                            ConcurrencyStamp = "1d0b387f-bd66-441b-88d1-97b2b5afa5bf",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "75bd005a-632c-470e-b868-da61859590cb",
-                            ConcurrencyStamp = "75bd005a-632c-470e-b868-da61859590cb",
+                            Id = "360e7fe5-2ef4-4ee4-8c66-fa22e2d50245",
+                            ConcurrencyStamp = "360e7fe5-2ef4-4ee4-8c66-fa22e2d50245",
                             Name = "user",
                             NormalizedName = "USER"
                         });
@@ -433,13 +444,13 @@ namespace Identity.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "55baeffd-ada6-4f07-a0bf-912e7172153a",
-                            RoleId = "e7281058-1a8b-4968-9b4a-216c13e8c63f"
+                            UserId = "278ffd82-5c7e-4c3d-8ceb-2dd382cd9011",
+                            RoleId = "1d0b387f-bd66-441b-88d1-97b2b5afa5bf"
                         },
                         new
                         {
-                            UserId = "d8640500-3e4f-40e6-a28e-36cda5d9b2cf",
-                            RoleId = "75bd005a-632c-470e-b868-da61859590cb"
+                            UserId = "57a2906d-ef97-4b0d-bd84-d8eb09f4701a",
+                            RoleId = "360e7fe5-2ef4-4ee4-8c66-fa22e2d50245"
                         });
                 });
 
@@ -462,21 +473,6 @@ namespace Identity.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("Identity.Models.ApplicationUser", b =>
-                {
-                    b.HasOne("Identity.Models.CityClass", "City")
-                        .WithMany()
-                        .HasForeignKey("CityId");
-
-                    b.HasOne("Identity.Models.CountryClass", "Country")
-                        .WithMany()
-                        .HasForeignKey("CountryId");
-
-                    b.Navigation("City");
-
-                    b.Navigation("Country");
                 });
 
             modelBuilder.Entity("Identity.Models.CityClass", b =>

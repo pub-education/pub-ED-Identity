@@ -43,7 +43,10 @@ namespace Identity
                 options.Password.RequiredLength = 4;
                 options.Password.RequiredUniqueChars = 1;
             })
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            //services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
             /*
             services.Configure<IdentityOptions>(options =>
             {

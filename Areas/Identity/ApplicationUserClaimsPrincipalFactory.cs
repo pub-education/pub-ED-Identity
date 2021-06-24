@@ -20,8 +20,8 @@ namespace Identity.Areas.Identity
         {
             var identity = await base.GenerateClaimsAsync(user);
 
-            identity.AddClaim(new Claim("City", user.City));
-            identity.AddClaim(new Claim("Country", user.Country));
+            identity.AddClaim(new Claim("City", user.City.Name));
+            identity.AddClaim(new Claim("Country", user.Country.Name));
 
             return identity;
         }

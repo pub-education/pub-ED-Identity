@@ -197,5 +197,9 @@ F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5
 F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Views\Users\ListPeople.cshtml.g.cs
-F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Views\Admin\CountryCityManager.cshtml.g.cs
-F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Views\Admin\PeopleManager.cshtml.g.cs
+F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Views\Home\ListPeople.cshtml.g.cs
+F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Views\Role\Create.cshtml.g.cs
+F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Views\Role\Index.cshtml.g.cs
+F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
+F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Views\Admin\EditUser.cshtml.g.cs
+F:\Education\Lexicon\Programmering .NET\05 Identity\code\Identity\obj\Debug\net5.0\Razor\Views\Role\Update.cshtml.g.cs

@@ -42,22 +42,22 @@ namespace Identity.Data
                 new CountryClass { Id = 5, Name = "Australia" }
                 );
             builder.Entity<CityClass>().HasData(
-                new CityClass { Id = 1, Name = "Gothenburg", CountryRefId = 1 },
-                new CityClass { Id = 2, Name = "Stockholm", CountryRefId = 1 },
-                new CityClass { Id = 3, Name = "Las Pinas", CountryRefId = 2 },
-                new CityClass { Id = 4, Name = "Manila", CountryRefId = 2 },
-                new CityClass { Id = 5, Name = "Riverside", CountryRefId = 3 },
-                new CityClass { Id = 6, Name = "Anaheim", CountryRefId = 3 },
-                new CityClass { Id = 7, Name = "Honolulu", CountryRefId = 3 },
-                new CityClass { Id = 8, Name = "Miami", CountryRefId = 3 },
-                new CityClass { Id = 9, Name = "Oslo", CountryRefId = 4 },
-                new CityClass { Id = 10, Name = "Geiranger", CountryRefId = 4 },
-                new CityClass { Id = 11, Name = "Liland", CountryRefId = 4 },
-                new CityClass { Id = 12, Name = "Brisbane", CountryRefId = 5 },
-                new CityClass { Id = 13, Name = "Cairns", CountryRefId = 5 },
-                new CityClass { Id = 14, Name = "Perth", CountryRefId = 5 },
-                new CityClass { Id = 15, Name = "Sydney", CountryRefId = 5 },
-                new CityClass { Id = 16, Name = "Canberra", CountryRefId = 5 }
+                new CityClass { Id = 1, Name = "Gothenburg", CountryId = 1 },
+                new CityClass { Id = 2, Name = "Stockholm", CountryId = 1 },
+                new CityClass { Id = 3, Name = "Las Pinas", CountryId = 2 },
+                new CityClass { Id = 4, Name = "Manila", CountryId = 2 },
+                new CityClass { Id = 5, Name = "Riverside", CountryId = 3 },
+                new CityClass { Id = 6, Name = "Anaheim", CountryId = 3 },
+                new CityClass { Id = 7, Name = "Honolulu", CountryId = 3 },
+                new CityClass { Id = 8, Name = "Miami", CountryId = 3 },
+                new CityClass { Id = 9, Name = "Oslo", CountryId = 4 },
+                new CityClass { Id = 10, Name = "Geiranger", CountryId = 4 },
+                new CityClass { Id = 11, Name = "Liland", CountryId = 4 },
+                new CityClass { Id = 12, Name = "Brisbane", CountryId = 5 },
+                new CityClass { Id = 13, Name = "Cairns", CountryId = 5 },
+                new CityClass { Id = 14, Name = "Perth", CountryId = 5 },
+                new CityClass { Id = 15, Name = "Sydney", CountryId = 5 },
+                new CityClass { Id = 16, Name = "Canberra", CountryId = 5 }
                 );
 
             string adminRoleId = Guid.NewGuid().ToString();
@@ -92,9 +92,8 @@ namespace Identity.Data
                 EmailConfirmed = true,
                 UserName = "admin@data4mat.com",
                 NormalizedUserName = "ADMIN@DATA4MAT.COM",
-                ConcurrencyStamp=adminRoleId,
-                SecurityStamp=adminRoleId,
-                CityId = 12
+                ConcurrencyStamp = adminRoleId,
+                SecurityStamp = adminRoleId
             };
 
             
@@ -109,8 +108,7 @@ namespace Identity.Data
                 UserName = "chris@data4mat.com",
                 NormalizedUserName = "CHRIS@DATA4MAT.COM",
                 ConcurrencyStamp = userRoleId,
-                SecurityStamp=userRoleId,
-                CityId = 1
+                SecurityStamp=userRoleId
             };
 
             
@@ -133,6 +131,7 @@ namespace Identity.Data
                 });
        
         }
+        
         
     }
 }
