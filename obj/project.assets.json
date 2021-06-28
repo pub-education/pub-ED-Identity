@@ -1050,7 +1050,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Collections.NonGeneric.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
@@ -1080,7 +1080,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {}
+          "ref/netstandard1.0/System.ComponentModel.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.ComponentModel.dll": {}
@@ -1103,7 +1103,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {}
+          "ref/netstandard1.0/System.ComponentModel.Primitives.dll": {}
         },
         "runtime": {
           "lib/netstandard1.0/System.ComponentModel.Primitives.dll": {}
@@ -1129,7 +1129,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {}
+          "ref/netstandard1.5/System.ComponentModel.TypeConverter.dll": {}
         },
         "runtime": {
           "lib/netstandard1.5/System.ComponentModel.TypeConverter.dll": {}
@@ -1599,7 +1599,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.1/_._": {}
+          "ref/netstandard1.1/System.Reflection.Emit.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.dll": {}
@@ -1613,7 +1613,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {}
+          "ref/netstandard1.0/System.Reflection.Emit.ILGeneration.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.ILGeneration.dll": {}
@@ -1673,7 +1673,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {}
+          "ref/netstandard1.5/System.Reflection.TypeExtensions.dll": {}
         },
         "runtime": {
           "lib/netstandard1.5/System.Reflection.TypeExtensions.dll": {}
@@ -2142,6 +2142,22 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "TinyMapper/3.0.3": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/TinyMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/TinyMapper.dll": {}
         }
       }
     }
@@ -7480,6 +7496,23 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "TinyMapper/3.0.3": {
+      "sha512": "a070h+NbFjMMclmWjEjGDnihUs4wE3ykx7R4BG7Oo38Jf66spzc3h3CbvbJYFlkbYl65dt5vbJFFH72vFdRr1A==",
+      "type": "package",
+      "path": "tinymapper/3.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/TinyMapper.dll",
+        "lib/net35/TinyMapper.xml",
+        "lib/net40/TinyMapper.dll",
+        "lib/net40/TinyMapper.xml",
+        "lib/netstandard1.3/TinyMapper.dll",
+        "lib/netstandard1.3/TinyMapper.xml",
+        "tinymapper.3.0.3.nupkg.sha512",
+        "tinymapper.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -7489,7 +7522,8 @@
       "Microsoft.AspNetCore.Identity.UI >= 5.0.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.6",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
+      "TinyMapper >= 3.0.3"
     ]
   },
   "packageFolders": {
@@ -7561,6 +7595,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[5.0.2, )"
+          },
+          "TinyMapper": {
+            "target": "Package",
+            "version": "[3.0.3, )"
           }
         },
         "imports": [

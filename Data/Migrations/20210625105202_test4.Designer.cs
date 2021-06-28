@@ -4,14 +4,16 @@ using Identity.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Identity.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210625105202_test4")]
+    partial class test4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,20 +29,14 @@ namespace Identity.Data.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CityClassId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CityId")
+                    b.Property<int?>("CityId")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CountryClassId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CountryId")
+                    b.Property<int?>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -91,9 +87,9 @@ namespace Identity.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CityClassId");
+                    b.HasIndex("CityId");
 
-                    b.HasIndex("CountryClassId");
+                    b.HasIndex("CountryId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -108,11 +104,9 @@ namespace Identity.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "cc61419f-1d94-44d7-b575-3d79f81c4943",
+                            Id = "858c004a-d447-456f-b067-e296b24cb405",
                             AccessFailedCount = 0,
-                            CityId = 1,
-                            ConcurrencyStamp = "ea2a8108-881a-4705-853a-3aa41b4d895d",
-                            CountryId = 1,
+                            ConcurrencyStamp = "33190ae2-480a-40f8-9ee0-c2577af8c178",
                             Email = "admin@data4mat.com",
                             EmailConfirmed = true,
                             FirstName = "admin",
@@ -120,19 +114,17 @@ namespace Identity.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@DATA4MAT.COM",
                             NormalizedUserName = "ADMIN@DATA4MAT.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGjoXVDVdnTtQL0Zh1TDAY4hHC5zVQF6Yua7916nHXbbV6OMtTAscORHJXgmvKD90Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMS062CkfycnO9eT2hL3fIo3au8PkfA/Cy1q3CTXidBKShKNftQ4apAG0lwWCQ6jmg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ea2a8108-881a-4705-853a-3aa41b4d895d",
+                            SecurityStamp = "33190ae2-480a-40f8-9ee0-c2577af8c178",
                             TwoFactorEnabled = false,
                             UserName = "admin@data4mat.com"
                         },
                         new
                         {
-                            Id = "2cf9979a-5e6d-4733-b002-03400f28a410",
+                            Id = "a9b76bd0-de9d-4ad2-9438-64fc420936e7",
                             AccessFailedCount = 0,
-                            CityId = 1,
-                            ConcurrencyStamp = "560ec97f-d1d1-4f4a-b3f4-7f186a675f67",
-                            CountryId = 1,
+                            ConcurrencyStamp = "9291a763-5d38-47f6-8d0b-47bdc9df7c9f",
                             Email = "chris@data4mat.com",
                             EmailConfirmed = true,
                             FirstName = "Chris",
@@ -140,9 +132,9 @@ namespace Identity.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CHRIS@DATA4MAT.COM",
                             NormalizedUserName = "CHRIS@DATA4MAT.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIGM8MJFYy1Ztxvf6LefyVtYaswrDKCfFx4e4qZtp3DLpGVkRSZ5uhkXtwIgdIaBmA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJJJxVBJxYCzKhHyq8Xf5JnvSr8yHlSXwr2cfILpl7Y/V4mdGwMSczj9IJNegj2UDQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "560ec97f-d1d1-4f4a-b3f4-7f186a675f67",
+                            SecurityStamp = "9291a763-5d38-47f6-8d0b-47bdc9df7c9f",
                             TwoFactorEnabled = false,
                             UserName = "chris@data4mat.com"
                         });
@@ -340,15 +332,15 @@ namespace Identity.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ea2a8108-881a-4705-853a-3aa41b4d895d",
-                            ConcurrencyStamp = "ea2a8108-881a-4705-853a-3aa41b4d895d",
+                            Id = "33190ae2-480a-40f8-9ee0-c2577af8c178",
+                            ConcurrencyStamp = "33190ae2-480a-40f8-9ee0-c2577af8c178",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "560ec97f-d1d1-4f4a-b3f4-7f186a675f67",
-                            ConcurrencyStamp = "560ec97f-d1d1-4f4a-b3f4-7f186a675f67",
+                            Id = "9291a763-5d38-47f6-8d0b-47bdc9df7c9f",
+                            ConcurrencyStamp = "9291a763-5d38-47f6-8d0b-47bdc9df7c9f",
                             Name = "user",
                             NormalizedName = "USER"
                         });
@@ -443,13 +435,13 @@ namespace Identity.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "cc61419f-1d94-44d7-b575-3d79f81c4943",
-                            RoleId = "ea2a8108-881a-4705-853a-3aa41b4d895d"
+                            UserId = "858c004a-d447-456f-b067-e296b24cb405",
+                            RoleId = "33190ae2-480a-40f8-9ee0-c2577af8c178"
                         },
                         new
                         {
-                            UserId = "2cf9979a-5e6d-4733-b002-03400f28a410",
-                            RoleId = "560ec97f-d1d1-4f4a-b3f4-7f186a675f67"
+                            UserId = "a9b76bd0-de9d-4ad2-9438-64fc420936e7",
+                            RoleId = "9291a763-5d38-47f6-8d0b-47bdc9df7c9f"
                         });
                 });
 
@@ -476,13 +468,17 @@ namespace Identity.Data.Migrations
 
             modelBuilder.Entity("Identity.Models.ApplicationUser", b =>
                 {
-                    b.HasOne("Identity.Models.CityClass", null)
-                        .WithMany("Users")
-                        .HasForeignKey("CityClassId");
+                    b.HasOne("Identity.Models.CityClass", "City")
+                        .WithMany()
+                        .HasForeignKey("CityId");
 
-                    b.HasOne("Identity.Models.CountryClass", null)
-                        .WithMany("Users")
-                        .HasForeignKey("CountryClassId");
+                    b.HasOne("Identity.Models.CountryClass", "Country")
+                        .WithMany()
+                        .HasForeignKey("CountryId");
+
+                    b.Navigation("City");
+
+                    b.Navigation("Country");
                 });
 
             modelBuilder.Entity("Identity.Models.CityClass", b =>
@@ -543,16 +539,9 @@ namespace Identity.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Identity.Models.CityClass", b =>
-                {
-                    b.Navigation("Users");
-                });
-
             modelBuilder.Entity("Identity.Models.CountryClass", b =>
                 {
                     b.Navigation("Cities");
-
-                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }

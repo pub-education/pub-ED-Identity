@@ -4,14 +4,16 @@ using Identity.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Identity.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210628124727_test6")]
+    partial class test6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -108,10 +110,10 @@ namespace Identity.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "cc61419f-1d94-44d7-b575-3d79f81c4943",
+                            Id = "8fb21070-4f52-4179-af57-dcbfbe97a35a",
                             AccessFailedCount = 0,
                             CityId = 1,
-                            ConcurrencyStamp = "ea2a8108-881a-4705-853a-3aa41b4d895d",
+                            ConcurrencyStamp = "29a3b20b-232a-4555-8201-c06e6c36ed4b",
                             CountryId = 1,
                             Email = "admin@data4mat.com",
                             EmailConfirmed = true,
@@ -120,18 +122,18 @@ namespace Identity.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@DATA4MAT.COM",
                             NormalizedUserName = "ADMIN@DATA4MAT.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGjoXVDVdnTtQL0Zh1TDAY4hHC5zVQF6Yua7916nHXbbV6OMtTAscORHJXgmvKD90Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGqWsAtIKg914UJhiFswvJ2yk25o+trIN13f0PMFlTwBJsuYuHhsZ5CU2mSJswB8CA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ea2a8108-881a-4705-853a-3aa41b4d895d",
+                            SecurityStamp = "29a3b20b-232a-4555-8201-c06e6c36ed4b",
                             TwoFactorEnabled = false,
                             UserName = "admin@data4mat.com"
                         },
                         new
                         {
-                            Id = "2cf9979a-5e6d-4733-b002-03400f28a410",
+                            Id = "ee3adc45-e4fd-4077-aef6-4e67904f1a5d",
                             AccessFailedCount = 0,
                             CityId = 1,
-                            ConcurrencyStamp = "560ec97f-d1d1-4f4a-b3f4-7f186a675f67",
+                            ConcurrencyStamp = "4baa6bdb-9c99-44a5-b077-1ca5655ee230",
                             CountryId = 1,
                             Email = "chris@data4mat.com",
                             EmailConfirmed = true,
@@ -140,9 +142,9 @@ namespace Identity.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CHRIS@DATA4MAT.COM",
                             NormalizedUserName = "CHRIS@DATA4MAT.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIGM8MJFYy1Ztxvf6LefyVtYaswrDKCfFx4e4qZtp3DLpGVkRSZ5uhkXtwIgdIaBmA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEC5D/uyLV6Mo24S21kzlw/G1QcDU5D9eHY7fHrkkdzNmvj6M+Kdrg26Z5gaCt2JTRA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "560ec97f-d1d1-4f4a-b3f4-7f186a675f67",
+                            SecurityStamp = "4baa6bdb-9c99-44a5-b077-1ca5655ee230",
                             TwoFactorEnabled = false,
                             UserName = "chris@data4mat.com"
                         });
@@ -158,7 +160,7 @@ namespace Identity.Data.Migrations
                     b.Property<int?>("CountryClassId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CountryId")
+                    b.Property<int?>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -340,15 +342,15 @@ namespace Identity.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ea2a8108-881a-4705-853a-3aa41b4d895d",
-                            ConcurrencyStamp = "ea2a8108-881a-4705-853a-3aa41b4d895d",
+                            Id = "29a3b20b-232a-4555-8201-c06e6c36ed4b",
+                            ConcurrencyStamp = "29a3b20b-232a-4555-8201-c06e6c36ed4b",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "560ec97f-d1d1-4f4a-b3f4-7f186a675f67",
-                            ConcurrencyStamp = "560ec97f-d1d1-4f4a-b3f4-7f186a675f67",
+                            Id = "4baa6bdb-9c99-44a5-b077-1ca5655ee230",
+                            ConcurrencyStamp = "4baa6bdb-9c99-44a5-b077-1ca5655ee230",
                             Name = "user",
                             NormalizedName = "USER"
                         });
@@ -443,13 +445,13 @@ namespace Identity.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "cc61419f-1d94-44d7-b575-3d79f81c4943",
-                            RoleId = "ea2a8108-881a-4705-853a-3aa41b4d895d"
+                            UserId = "8fb21070-4f52-4179-af57-dcbfbe97a35a",
+                            RoleId = "29a3b20b-232a-4555-8201-c06e6c36ed4b"
                         },
                         new
                         {
-                            UserId = "2cf9979a-5e6d-4733-b002-03400f28a410",
-                            RoleId = "560ec97f-d1d1-4f4a-b3f4-7f186a675f67"
+                            UserId = "ee3adc45-e4fd-4077-aef6-4e67904f1a5d",
+                            RoleId = "4baa6bdb-9c99-44a5-b077-1ca5655ee230"
                         });
                 });
 

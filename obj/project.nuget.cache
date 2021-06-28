@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pf0Rm+xfkqyGX2d7bSucSGXSK/qq9ZT0c3JDBaVxxbVb2ua5ocNYKxx5P9Ycjp/F4hznZVuuWPcIxQ9M+jiTaQ==",
+  "dgSpecHash": "+n0VBCMfXiFKyg/V3bxwpn4b7E0c+OMSWe+SMMOkmzaDYZrVbbImE0iuhCo3ERe4o5xcMzw5Pn1uk9DxnbnjXQ==",
   "success": true,
   "projectFilePath": "F:\\Education\\Lexicon\\Programmering .NET\\05 Identity\\code\\Identity\\Identity.csproj",
   "expectedPackageFiles": [
@@ -136,7 +136,8 @@
     "C:\\Users\\chris\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\chris\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\chris\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\tinymapper\\3.0.3\\tinymapper.3.0.3.nupkg.sha512"
   ],
   "logs": []
 }

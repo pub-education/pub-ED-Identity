@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using Identity.Data;
 using Identity.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -24,17 +25,20 @@ namespace Identity.Areas.Identity.Pages.Account
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private ApplicationDbContext _context;
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            ApplicationDbContext ctx)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _context = ctx;
         }
 
         [BindProperty]
@@ -43,6 +47,11 @@ namespace Identity.Areas.Identity.Pages.Account
         public string ReturnUrl { get; set; }
 
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
+
+        public List<CityClass> Cities { get; set; }
+        public List<CountryClass> Countries { get; set; }
+
+        public int CityId { get; set; }
 
         public class InputModel
         {
@@ -61,10 +70,27 @@ namespace Identity.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [Required]
+            [Display(Name = "First Name")]
+            public string FirstName { get; set; }
+
+            [Required]
+            [Display(Name = "Last Name")]
+            public string LastName { get; set; }
+
+            [Display(Name = "City")]
+
+            public int CityId { get; set; }
+
+            [Display(Name = "Country")]
+            public int CountryId { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
         {
+            Cities = _context.Cities.ToList<CityClass>();
+            Countries = _context.Countries.ToList<CountryClass>();
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
@@ -75,7 +101,15 @@ namespace Identity.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email };
+                var city_select = await _context.Cities.FindAsync(Input.CityId);
+                var user = new ApplicationUser {
+                    UserName = Input.Email,
+                    Email = Input.Email,
+                    FirstName = Input.FirstName,
+                    LastName = Input.LastName,
+                    CityId = Input.CityId,
+                    CountryId = Input.CountryId
+                };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

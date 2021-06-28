@@ -21,6 +21,8 @@ namespace Identity.Data
         [PersonalData]
         public DbSet<CountryClass> Countries { get; set; }
 
+        public override DbSet<ApplicationUser> Users { get; set; }
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -28,7 +30,7 @@ namespace Identity.Data
             base.OnConfiguring(optionsBuilder);
         }
 
-        
+       
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -93,7 +95,9 @@ namespace Identity.Data
                 UserName = "admin@data4mat.com",
                 NormalizedUserName = "ADMIN@DATA4MAT.COM",
                 ConcurrencyStamp = adminRoleId,
-                SecurityStamp = adminRoleId
+                SecurityStamp = adminRoleId,
+                CityId = 1,
+                CountryId = 1
             };
 
             
@@ -108,7 +112,9 @@ namespace Identity.Data
                 UserName = "chris@data4mat.com",
                 NormalizedUserName = "CHRIS@DATA4MAT.COM",
                 ConcurrencyStamp = userRoleId,
-                SecurityStamp=userRoleId
+                SecurityStamp=userRoleId,
+                CityId = 1,
+                CountryId = 1
             };
 
             
@@ -129,9 +135,6 @@ namespace Identity.Data
                     RoleId = userRoleId,
                     UserId = userId
                 });
-       
         }
-        
-        
     }
 }
